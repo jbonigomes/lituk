@@ -1,0 +1,97 @@
+html {
+  height: 100%;
+}
+
+#right::backdrop {
+  background-color: mediumseagreen;
+}
+
+#wrong::backdrop {
+  background-color: salmon;
+}
+
+[popover] {
+  border: none;
+  padding: 50px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+button {
+  width: 100%;
+  color: white;
+  border: none;
+  display: block;
+  font-size: 22px;
+  padding: 12px 8px;
+  border-radius: 5px;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  box-sizing: border-box;
+  font-family: monospace;
+  flex-direction: column;
+}
+
+header {
+  height: 16px;
+}
+
+section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+footer {
+  height: 100px;
+  padding-top: 40px;
+  box-sizing: border-box;
+}
+
+aside {
+  color: white;
+}
+
+h1 {
+  margin: 0;
+  font-size: 26px;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+
+  &#right-answer {
+    font-size: 18px;
+  }
+}
+
+section button {
+  margin: 5px 0;
+  background: dodgerblue;
+
+  &.selected {
+    background: deepskyblue;
+  }
+}
+
+footer button {
+  background: midnightblue;
+}
+
+aside span {
+  height: 225px;
+  display: block;
+  font-size: 200px;
+}
+
+aside div {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
