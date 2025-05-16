@@ -21,14 +21,17 @@
     const state = {
       id: 0,
       answer: [],
-      selected: [],
+      question: '',
     }
 
     const onSubmit = () => {
       const questions = JSON.parse(localStorage.getItem('questions'))
-      const samelength = state.answer.length === state.selected.length
-      const correct = samelength && state.answer.every((a) => state.selected.includes(a))
+      const selected = [...document.querySelectorAll('input:checked')].map((a) => a.value)
 
+      const samelength = state.answer.length === selected.length
+      const correct = samelength && state.answer.every((a) => selected.includes(a))
+
+      document.getElementById('right-question').innerHTML = state.question
       document.getElementById('right-answer').innerHTML = state.answer.join(' | ')
 
       if (correct) {
@@ -48,16 +51,6 @@
       }
     }
 
-    const onSelect = (option) => {
-      if (state.selected.includes(option)) {
-        document.getElementById(`option-${option}`).classList.remove('selected')
-        state.selected = state.selected.filter(o => o !== option)
-      } else {
-        document.getElementById(`option-${option}`).classList.add('selected')
-        state.selected = state.selected.concat(option)
-      }
-    }
-
     const render = () => {
       const allQuestions = JSON.parse(localStorage.getItem('questions'))
       const questions = allQuestions.filter(({ accepted }) => accepted < 3)
@@ -67,7 +60,7 @@
 
       state.id = id
       state.answer = answer
-      state.selected = []
+      state.question = question
 
       document.body.innerHTML = `
         <header>
@@ -78,13 +71,18 @@
         </section>
         <section>
           ${options.map((option) => `
-            <button onclick="onSelect('${option}')" id="option-${option}">
+            <label>
+              <input type="checkbox" value="${option}" />
               ${option}
-            </button>
+            </label>
           `).join('')}
         </section>
         <footer>
-          <button onclick="onSubmit()">Submit</button>
+          <button onclick="onSubmit()">
+            <div>
+              <span>CHECK</span>
+            </div>
+          </button>
         </footer>
         <aside id="right" popover>
           <div>WELL DONE!</div>
@@ -92,9 +90,9 @@
         </aside>
         <aside id="wrong" popover>
           <div>OH NO!</div>
-          <p>The correct answer is:</p>
+          <p id="right-question"></p>
           <p id="right-answer"></p>
-          <button>OK</button>
+          <button onclick="render()">OK</button>
         </aside>
       `
     }

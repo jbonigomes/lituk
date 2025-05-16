@@ -3,11 +3,11 @@ html {
 }
 
 #right::backdrop {
-  background-color: mediumseagreen;
+  background-color: #3cb371;
 }
 
 #wrong::backdrop {
-  background-color: salmon;
+  background-color: #e03352;
 }
 
 [popover] {
@@ -18,12 +18,13 @@ html {
 
 button {
   width: 100%;
-  color: white;
   border: none;
+  color: #ffffff;
   display: block;
   font-size: 22px;
   padding: 12px 8px;
-  border-radius: 5px;
+  background: #0052b4;
+  border-radius: 50px;
 }
 
 body {
@@ -54,7 +55,7 @@ footer {
 }
 
 aside {
-  color: white;
+  color: #ffffff;
   max-width: 65%;
 }
 
@@ -72,17 +73,14 @@ p {
   }
 }
 
-section button {
-  margin: 5px 0;
-  background: dodgerblue;
+label {
+  padding: 20px 0;
+  font-size: 17px;
+  border-bottom: 1px solid #dddddd;
 
-  &.selected {
-    background: deepskyblue;
+  input {
+    accent-color: #0052b4;
   }
-}
-
-footer button {
-  background: midnightblue;
 }
 
 aside span {
@@ -92,11 +90,11 @@ aside span {
 }
 
 aside div {
-  color: white;
+  color: #ffffff;
   font-size: 20px;
   text-align: center;
 }
 
 aside button {
-  background: red;
+  background: #d80027;
 }
