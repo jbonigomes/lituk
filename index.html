@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="theme-color" content="#FFF">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="LIT-UK">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="index.css">
+  <meta charset="utf-8" />
+  <meta name="theme-color" content="#FFF" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="LIT-UK" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="index.css" />
   <link rel="icon" href="favicon.png" />
-  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="apple-touch-icon" href="appicon.png" />
   <title>LIT-UK</title>
   <script>
     if (!localStorage.getItem('questions')) {
@@ -37,6 +37,8 @@
           ...q,
           accepted: q.id === state.id ? q.accepted + 1 : q.accepted,
         }))))
+
+        setTimeout(render, 1500)
       }  else {
         document.getElementById('wrong').showPopover()
         localStorage.setItem('questions', JSON.stringify(questions.map((q) => ({
@@ -44,11 +46,9 @@
           accepted: q.id === state.id ? 0 : q.accepted,
         }))))
       }
-
-      setTimeout(render, 1500)
     }
 
-    const onClick = (option) => {
+    const onSelect = (option) => {
       if (state.selected.includes(option)) {
         document.getElementById(`option-${option}`).classList.remove('selected')
         state.selected = state.selected.filter(o => o !== option)
@@ -78,7 +78,7 @@
         </section>
         <section>
           ${options.map((option) => `
-            <button onclick="onClick('${option}')" id="option-${option}">
+            <button onclick="onSelect('${option}')" id="option-${option}">
               ${option}
             </button>
           `).join('')}
@@ -94,6 +94,7 @@
           <div>OH NO!</div>
           <p>The correct answer is:</p>
           <p id="right-answer"></p>
+          <button>OK</button>
         </aside>
       `
     }
