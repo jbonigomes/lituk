@@ -1,0 +1,100 @@
+html {
+  height: 100%;
+}
+
+#right::backdrop {
+  background-color: #3cb371;
+}
+
+#wrong::backdrop {
+  background-color: #e03352;
+}
+
+[popover] {
+  border: none;
+  padding: 50px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+button {
+  width: 100%;
+  border: none;
+  color: #ffffff;
+  display: block;
+  font-size: 22px;
+  padding: 12px 8px;
+  background: #0052b4;
+  border-radius: 50px;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  box-sizing: border-box;
+  font-family: monospace;
+  flex-direction: column;
+}
+
+header {
+  height: 16px;
+}
+
+section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+footer {
+  height: 100px;
+  padding-top: 40px;
+  box-sizing: border-box;
+}
+
+aside {
+  color: #ffffff;
+  max-width: 65%;
+}
+
+h1 {
+  margin: 0;
+  font-size: 26px;
+  text-align: center;
+}
+
+p {
+  text-align: center;
+
+  &#right-answer {
+    font-size: 18px;
+  }
+}
+
+label {
+  padding: 20px 0;
+  font-size: 17px;
+  border-bottom: 1px solid #dddddd;
+
+  input {
+    accent-color: #0052b4;
+  }
+}
+
+aside span {
+  height: 225px;
+  display: block;
+  font-size: 200px;
+}
+
+aside div {
+  color: #ffffff;
+  font-size: 20px;
+  text-align: center;
+}
+
+aside button {
+  background: #d80027;
+}
