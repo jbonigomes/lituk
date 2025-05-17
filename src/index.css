@@ -1,3 +1,7 @@
+:root {
+  --progress: 0%;
+}
+
 html {
   height: 100%;
 }
@@ -8,6 +12,10 @@ html {
 
 #wrong::backdrop {
   background-color: #e03352;
+}
+
+#stats::backdrop {
+  background-color: #777777;
 }
 
 [popover] {
@@ -39,6 +47,27 @@ body {
 
 header {
   height: 16px;
+  position: relative;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #dddddd;
+
+  button {
+    padding: 0;
+    color: #000000;
+    font-size: 14px;
+    background: none;
+    text-align: left;
+  }
+
+  &:after {
+    left: 0;
+    height: 1px;
+    content: '';
+    bottom: -1px;
+    position: absolute;
+    background: #d80027;
+    width: var(--progress);
+  }
 }
 
 section {
@@ -97,4 +126,9 @@ aside div {
 
 aside button {
   background: #d80027;
+}
+
+aside button[popovertargetaction="hide"] {
+  margin: 10px 0;
+  background: #777777;
 }
