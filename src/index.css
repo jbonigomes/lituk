@@ -98,6 +98,7 @@ aside {
   }
 
   &#stats button {
+    margin-top: 10px;
     background: var(--grey);
   }
 
