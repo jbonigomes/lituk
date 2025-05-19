@@ -1,38 +1,40 @@
 :root {
   --progress: 0%;
-}
-
-html {
-  height: 100%;
+  --red: #e03352;
+  --grey: #777777;
+  --blue: #0052b4;
+  --green: #3cb371;
+  --white: #ffffff;
+  --black: #000000;
+  --crimson: #d80027;
+  --border: 1px solid #dddddd;
+  --transparent: rgba(255, 255, 255, 0.1);
 }
 
 #right::backdrop {
-  background-color: #3cb371;
+  background-color: var(--green);
 }
 
 #wrong::backdrop {
-  background-color: #e03352;
+  background-color: var(--red);
 }
 
 #stats::backdrop {
-  background-color: #777777;
+  background-color: var(--grey);
 }
 
 [popover] {
   border: none;
   padding: 50px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--transparent);
+
+  :is(button) {
+    pointer-events: auto !important;
+  }
 }
 
-button {
-  width: 100%;
-  border: none;
-  color: #ffffff;
-  display: block;
-  font-size: 22px;
-  padding: 12px 8px;
-  background: #0052b4;
-  border-radius: 50px;
+html {
+  height: 100%;
 }
 
 body {
@@ -43,20 +45,24 @@ body {
   box-sizing: border-box;
   font-family: monospace;
   flex-direction: column;
+
+  &:has(:popover-open) :is(button) {
+    pointer-events: none;
+  }
 }
 
 header {
   height: 16px;
   position: relative;
   padding-bottom: 4px;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: var(--border);
 
   button {
     padding: 0;
-    color: #000000;
     font-size: 14px;
     background: none;
     text-align: left;
+    color: var(--black);
   }
 
   &:after {
@@ -65,8 +71,8 @@ header {
     content: '';
     bottom: -1px;
     position: absolute;
-    background: #d80027;
     width: var(--progress);
+    background: var(--crimson);
   }
 }
 
@@ -84,8 +90,28 @@ footer {
 }
 
 aside {
-  color: #ffffff;
   max-width: 65%;
+  color: var(--white);
+
+  &#wrong button {
+    background: var(--crimson);
+  }
+
+  &#stats button {
+    background: var(--grey);
+  }
+
+  span {
+    height: 225px;
+    display: block;
+    font-size: 200px;
+  }
+
+  div {
+    font-size: 20px;
+    text-align: center;
+    color: var(--white);
+  }
 }
 
 h1 {
@@ -102,33 +128,23 @@ p {
   }
 }
 
+button {
+  width: 100%;
+  border: none;
+  display: block;
+  font-size: 22px;
+  padding: 12px 8px;
+  border-radius: 50px;
+  color: var(--white);
+  background: var(--blue);
+}
+
 label {
   padding: 20px 0;
   font-size: 17px;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: var(--border);
 
   input {
-    accent-color: #0052b4;
+    accent-color: var(--blue);
   }
-}
-
-aside span {
-  height: 225px;
-  display: block;
-  font-size: 200px;
-}
-
-aside div {
-  color: #ffffff;
-  font-size: 20px;
-  text-align: center;
-}
-
-aside button {
-  background: #d80027;
-}
-
-aside button[popovertargetaction="hide"] {
-  margin: 10px 0;
-  background: #777777;
 }
