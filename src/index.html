@@ -13317,7 +13317,7 @@
     const initialData = JSON.parse(document.getElementById('initial-data').textContent)
 
     if (!currentData) {
-      localStorage.setItem('questions', JSON.stringify(initialData)
+      localStorage.setItem('questions', JSON.stringify(initialData))
     } else {
       const dataMap = initialData.reduce((acc, cur) => ({
         ...acc,
