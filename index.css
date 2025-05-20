@@ -31,7 +31,11 @@
 
 html {
   height: 100%;
-  background: pink;
+  background: green;
+
+  &:has(:popover-open) nav {
+    display: block;
+  }
 }
 
 body {
@@ -91,10 +95,6 @@ nav {
   display: none;
   position: absolute;
   background: rgba(255, 0, 0, 0.5);
-
-  &:has(:popover-open) {
-    display: block;
-  }
 }
 
 aside {
