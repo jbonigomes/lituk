@@ -5,7 +5,7 @@
   <meta name="theme-color" content="#FFF" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="LIT-UK" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <link rel="stylesheet" href="index.css" />
   <link rel="icon" href="favicon.png" />
   <link rel="apple-touch-icon" href="appicon.png" />
@@ -13441,7 +13441,7 @@
             You have <b>${questions.length}</b> questions left out of <b>${allQuestions.length}</b>
           </p>
           <button popovertarget="stats" popovertargetaction="hide">OK</button>
-          <button onclick="window.location.reload()">Reload</button>
+          <button onclick="window.location.reload(true)">Reload</button>
         </aside>
       `
     }

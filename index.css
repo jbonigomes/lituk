@@ -28,7 +28,7 @@
   padding: 50px;
   background: var(--transparent);
 
-  :is(button) {
+  :is(button, input, label) {
     pointer-events: auto !important;
   }
 }
@@ -42,11 +42,12 @@ body {
   height: 100%;
   padding: 20px;
   display: flex;
+  user-select: none;
   box-sizing: border-box;
   font-family: monospace;
   flex-direction: column;
 
-  &:has(:popover-open) :is(button) {
+  &:has(:popover-open) :is(button, input, label) {
     pointer-events: none;
   }
 }
