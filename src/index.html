@@ -13311,7 +13311,7 @@
     ]
   </script>
   <script>
-    const currentData = JSON.parse(localStorage.getItem('questions') ?? null)
+    const currentData = localStorage.getItem('questions')
     const initialData = JSON.parse(document.getElementById('initial-data').textContent)
 
     if (!currentData) {
@@ -13331,10 +13331,6 @@
           return true
         }
 
-        if (!dataMap[id].answer.every((a) => answer[a])) {
-          return true
-        }
-
         if (!answer.every((a) => dataMap[id].answer.includes(a))) {
           return true
         }
@@ -13342,7 +13338,7 @@
         return false
       }
 
-      const updatedData = currentData.map((q) => ({
+      const updatedData = JSON.parse(currentData).map((q) => ({
         ...q,
         answer: dataMap[q.id].answer,
         question: dataMap[q.id].question,
