@@ -90,6 +90,20 @@ footer {
   box-sizing: border-box;
 }
 
+nav {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  position: absolute;
+  background: rgba(255, 0, 0, 0.5);
+
+  &:has(:popover-open) {
+    display: block;
+  }
+}
+
 aside {
   max-width: 65%;
   color: var(--white);
