@@ -27,10 +27,6 @@
   border: none;
   padding: 50px;
   background: var(--transparent);
-
-  :is(button, input, label) {
-    pointer-events: auto !important;
-  }
 }
 
 html {
@@ -46,10 +42,6 @@ body {
   box-sizing: border-box;
   font-family: monospace;
   flex-direction: column;
-
-  &:has(:popover-open) :is(button, input, label) {
-    pointer-events: none;
-  }
 }
 
 header {
@@ -97,7 +89,6 @@ nav {
   bottom: 0;
   display: none;
   position: absolute;
-  background: rgba(255, 0, 0, 0.5);
 
   &:has(:popover-open) {
     display: block;
