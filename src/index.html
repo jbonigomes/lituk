@@ -13311,7 +13311,7 @@
     ]
   </script>
   <script>
-    const currentData = localStorage.getItem('questions')
+    const currentData = JSON.parse(localStorage.getItem('questions') ?? null)
     const initialData = JSON.parse(document.getElementById('initial-data').textContent)
 
     if (!currentData) {
@@ -13331,7 +13331,7 @@
           return true
         }
 
-        if (!dataMap[id].answer.every((a) => answer(a))) {
+        if (!dataMap[id].answer.every((a) => answer[a])) {
           return true
         }
 
@@ -13427,23 +13427,28 @@
           </button>
         </footer>
         <aside id="right" popover="manual">
-          <div>WELL DONE!</div>
-          <span>&#127881;</span>
+          <article>
+            <div>WELL DONE!</div>
+            <span>&#127881;</span>
+          </article>
         </aside>
         <aside id="wrong" popover="manual">
-          <div>OH NO!</div>
-          <p id="right-question"></p>
-          <p id="right-answer"></p>
-          <button onclick="render()">OK</button>
+          <article>
+            <div>OH NO!</div>
+            <p id="right-question"></p>
+            <p id="right-answer"></p>
+            <button onclick="render()">OK</button>
+          </article>
         </aside>
         <aside id="stats" popover="manual">
-          <p>
-            You have <b>${questions.length}</b> questions left out of <b>${allQuestions.length}</b>
-          </p>
-          <button popovertarget="stats" popovertargetaction="hide">OK</button>
-          <button onclick="window.location.reload(true)">Reload</button>
+          <article>
+            <p>
+              You have <b>${questions.length}</b> questions left out of <b>${allQuestions.length}</b>
+            </p>
+            <button popovertarget="stats" popovertargetaction="hide">OK</button>
+            <button onclick="window.location.reload(true)">Reload</button>
+          </article>
         </aside>
-        <nav></nav>
       `
     }
 

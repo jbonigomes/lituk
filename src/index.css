@@ -11,12 +11,12 @@
   --transparent: rgba(255, 255, 255, 0.1);
 }
 
-#right::backdrop {
-  background-color: var(--green);
-}
-
 #wrong::backdrop {
   background-color: var(--red);
+}
+
+#right::backdrop {
+  background-color: var(--green);
 }
 
 #stats::backdrop {
@@ -24,18 +24,15 @@
 }
 
 [popover] {
+  width: 100%;
+  height: 100%;
   border: none;
-  padding: 50px;
-  background: var(--transparent);
+  background: none;
+  box-sizing: border-box;
 }
 
 html {
   height: 100%;
-  background: green;
-
-  &:has(:popover-open) nav {
-    display: block;
-  }
 }
 
 body {
@@ -87,18 +84,8 @@ footer {
   box-sizing: border-box;
 }
 
-nav {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: none;
-  position: absolute;
-  background: rgba(255, 0, 0, 0.5);
-}
-
 aside {
-  max-width: 65%;
+  position: relative;
   color: var(--white);
 
   &#wrong button {
@@ -120,6 +107,18 @@ aside {
     font-size: 20px;
     text-align: center;
     color: var(--white);
+  }
+
+  article {
+    width: 80%;
+    padding: 20px;
+    margin: 0 10%;
+    box-sizing: border-box;
+    background: var(--transparent);
+
+    position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   }
 }
 
