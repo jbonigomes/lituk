@@ -101,6 +101,7 @@ aside {
     height: 225px;
     display: block;
     font-size: 200px;
+    text-align: center;
   }
 
   div {
@@ -110,15 +111,14 @@ aside {
   }
 
   article {
+    top: 50%;
     width: 80%;
     padding: 20px;
     margin: 0 10%;
-    box-sizing: border-box;
-    background: var(--transparent);
-
     position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+    box-sizing: border-box;
+    transform: translateY(-50%);
+    background: var(--transparent);
   }
 }
 
