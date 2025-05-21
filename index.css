@@ -23,6 +23,19 @@
   background-color: var(--grey);
 }
 
+#wrong button {
+  background: var(--crimson);
+}
+
+#stats button {
+  margin-top: 10px;
+  background: var(--grey);
+}
+
+#right-answer {
+  font-size: 18px;
+}
+
 [popover] {
   width: 100%;
   height: 100%;
@@ -87,39 +100,17 @@ footer {
 aside {
   position: relative;
   color: var(--white);
+}
 
-  &#wrong button {
-    background: var(--crimson);
-  }
-
-  &#stats button {
-    margin-top: 10px;
-    background: var(--grey);
-  }
-
-  span {
-    height: 225px;
-    display: block;
-    font-size: 200px;
-    text-align: center;
-  }
-
-  div {
-    font-size: 20px;
-    text-align: center;
-    color: var(--white);
-  }
-
-  article {
-    top: 50%;
-    width: 80%;
-    padding: 20px;
-    margin: 0 10%;
-    position: absolute;
-    box-sizing: border-box;
-    transform: translateY(-50%);
-    background: var(--transparent);
-  }
+article {
+  top: 50%;
+  width: 80%;
+  padding: 20px;
+  margin: 0 10%;
+  position: absolute;
+  box-sizing: border-box;
+  transform: translateY(-50%);
+  background: var(--transparent);
 }
 
 h1 {
@@ -128,12 +119,26 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  font-size: 20px;
+  text-align: center;
+  color: var(--white);
+}
+
 p {
   text-align: center;
+}
 
-  &#right-answer {
-    font-size: 18px;
-  }
+i {
+  font-weight: bold;
+  font-family: system-ui;
+}
+
+span {
+  height: 225px;
+  display: block;
+  font-size: 200px;
+  text-align: center;
 }
 
 button {
@@ -151,8 +156,8 @@ label {
   padding: 20px 0;
   font-size: 17px;
   border-bottom: var(--border);
+}
 
-  input {
-    accent-color: var(--blue);
-  }
+input {
+  accent-color: var(--blue);
 }
