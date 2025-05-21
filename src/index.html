@@ -13401,7 +13401,7 @@
       document.body.innerHTML = `
         <header>
           <button popovertarget="stats">
-            <span>${progress}%</span>
+            ${progress}%
           </button>
         </header>
         <section>
@@ -13417,20 +13417,18 @@
         </section>
         <footer>
           <button onclick="onSubmit()">
-            <div>
-              <span>CHECK</span>
-            </div>
+            <i>&check;</i>
           </button>
         </footer>
         <aside id="right" popover="manual">
           <article>
-            <div>WELL DONE!</div>
+            <h2>WELL DONE!</h2>
             <span>&#127881;</span>
           </article>
         </aside>
         <aside id="wrong" popover="manual">
           <article>
-            <div>OH NO!</div>
+            <h2>OH NO!</h2>
             <p id="right-question"></p>
             <p id="right-answer"></p>
             <button onclick="render()">OK</button>
