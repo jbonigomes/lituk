@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>LIT-UK</title>
   <meta charset="utf-8" />
-  <meta name="theme-color" content="#FFF" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-title" content="LIT-UK" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <link rel="stylesheet" href="index.css" />
   <link rel="icon" href="favicon.png" />
+  <link rel="stylesheet" href="index.css" />
   <link rel="apple-touch-icon" href="appicon.png" />
-  <title>LIT-UK</title>
   <script id="initial-data" type="application/json">
     [
       {
@@ -13399,9 +13399,11 @@
 
       document.body.innerHTML = `
         <header>
-          <button popovertarget="stats">
-            ${progress}%
-          </button>
+          <div>${progress}%</div>
+          <div><b>${questions.length}</b> of ${allQuestions.length}</div>
+          <div>
+            <i onclick="window.location.reload(true);">&#10227;</i>
+          </div>
         </header>
         <section>
           <h1>${question}</h1>
@@ -13431,15 +13433,6 @@
             <p id="right-question"></p>
             <p id="right-answer"></p>
             <button onclick="render()">OK</button>
-          </article>
-        </aside>
-        <aside id="stats" popover="manual">
-          <article>
-            <p>
-              You have <b>${questions.length}</b> questions left out of <b>${allQuestions.length}</b>
-            </p>
-            <button popovertarget="stats" popovertargetaction="hide">OK</button>
-            <button onclick="window.location.reload(true)">Reload</button>
           </article>
         </aside>
       `
