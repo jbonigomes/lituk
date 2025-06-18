@@ -1,0 +1,14 @@
+{
+  "name": "LIT-UK",
+  "short_name": "LIT-UK",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "sizes": "180x180",
+      "type": "image/png",
+      "src": "appicon.png"
+    }
+  ]
+}
