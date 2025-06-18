@@ -1,7 +1,6 @@
 {
   "name": "LIT-UK",
   "short_name": "LIT-UK",
-  "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
   "icons": [
