@@ -13387,7 +13387,7 @@
     const render = () => {
       const allQuestions = JSON.parse(localStorage.getItem('questions'))
       const questions = allQuestions.filter(({ accepted }) => accepted < 3)
-      const accepted = questions.reduce((acc, cur) => acc + cur.accepted, 0)
+      const accepted = allQuestions.reduce((acc, cur) => acc + cur.accepted, 0)
       const progress = (accepted * 100 / (allQuestions.length * 3)).toFixed(2)
       const randomQuestionIndex = Math.floor(Math.random() * questions.length)
       const { id, question, options, answer } = questions[randomQuestionIndex]
@@ -13401,7 +13401,7 @@
       document.body.innerHTML = `
         <header>
           <div>${progress}%</div>
-          <div><b>${questions.length}</b> of ${allQuestions.length}</div>
+          <div><b>${questions.length}</b> off ${allQuestions.length}</div>
           <div>
             <i onclick="window.location.reload(true);">&#10227;</i>
           </div>
